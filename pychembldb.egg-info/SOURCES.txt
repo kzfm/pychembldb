@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+pychembldb/__init__.py
+pychembldb.egg-info/PKG-INFO
+pychembldb.egg-info/SOURCES.txt
+pychembldb.egg-info/dependency_links.txt
+pychembldb.egg-info/entry_points.txt
+pychembldb.egg-info/not-zip-safe
+pychembldb.egg-info/top_level.txt

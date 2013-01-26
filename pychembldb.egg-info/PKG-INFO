@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pychembldb
+Version: 0.1dev
+Summary: ChEMBLdb interface for Python
+Home-page: http://github.com/kzfm/pychembldb
+Author: Ohkawa Kazufumi
+Author-email: kerolinq@gmail.com
+License: MIT
+Description: ChEMBLdb interface for Python
+Keywords: chemoinformatics cheminformatics
+Platform: UNKNOWN
