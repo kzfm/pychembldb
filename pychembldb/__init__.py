@@ -1,8 +1,12 @@
+import os
 from sqlalchemy import *
 from sqlalchemy.orm import create_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 uri = 'mysql://root@localhost/chembl_14'
+if os.environ['CHEMBL_URI']:
+    uri = os.environ['CHEMBL_URI']
+
 Base = declarative_base()
 engine = create_engine(uri)
 metadata = MetaData(bind=engine)
