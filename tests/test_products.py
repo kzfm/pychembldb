@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Product
+from pychembldb import chembldb, Product
 
 
 class ProductTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Product).first()
+        self.target = chembldb.query(Product).first()
 
     def test_dosage_form(self):
         self.assertIsNone(self.target.dosage_form)

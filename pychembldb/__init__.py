@@ -10,6 +10,7 @@ metadata = MetaData(bind=engine)
 
 class Assay2Target(Base):
     __table__ = Table('assay2target', metadata, autoload=True)
+    #user_id = Column(Integer, ForeignKey('users.id'))
 
 
 class CompoundStructure(Base):
@@ -22,6 +23,7 @@ class CompoundProperty(Base):
 
 class CompoundRecord(Base):
     __table__ = Table('compound_records', metadata, autoload=True)
+    activities = relationship('Activity', backref='compound')
 
 
 class TargetClass(Base):
@@ -52,6 +54,10 @@ class OrganismClass(Base):
 
 class MoleculeDictionary(Base):
     __table__ = Table('molecule_dictionary', metadata, autoload=True)
+    compounds = relationship('CompoundRecord', backref='molecule')
+    activities = relationship('Activity', backref='molecule')
+    structures = relationship('CompoundStructure', backref='molecule')
+    properties = relationship('CompoundProperty', backref='molecule')
 
 
 class CurationLookup(Base):
@@ -89,6 +95,8 @@ class Activity(Base):
 
 class Assay(Base):
     __table__ = Table('assays', metadata, autoload=True)
+    targets = relationship(TargetDictionary, secondary=Table('assay2target', metadata, autoload=True), backref='assays')
+    activities = relationship(Activity, backref='assay')
 
 
 class AssayType(Base):
@@ -104,7 +112,8 @@ class AssayType(Base):
 class Doc(Base):
     __table__ = Table('docs', metadata, autoload=True)
     assays = relationship("Assay", backref='doc')
-    #compounds = relationship(Assay, backref='compound')
+    activities = relationship(Activity, backref='doc')
+    compounds = relationship(CompoundRecord, backref='doc')
 
 
 class Source(Base):
@@ -129,4 +138,4 @@ class ChemblIdLookup(Base):
     __table__ = Table('chembl_id_lookup', metadata, autoload=True)
 
 
-chembl = create_session(bind=engine)
+chembldb = create_session(bind=engine)

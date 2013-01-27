@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Assay
+from pychembldb import chembldb, Assay
 
 
 class AssayTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Assay).get(10)
+        self.target = chembldb.query(Assay).get(10)
 
     def test_assay_id(self):
         self.assertEqual(self.target.assay_id, 10)
@@ -43,5 +43,12 @@ class AssayTest(unittest.TestCase):
     def test_assay_type_backref(self):
         self.assertEqual(self.target.type.assay_desc, "Functional")
 
-#    def test_assay_targets(self):
-#        self.assertEqual(len(self.target.targets), 0)
+    def test_assay_targets(self):
+        self.assertEqual(len(self.target.targets), 1)
+
+    # assay -> activity
+    def test_assay_activities(self):
+        self.assertEqual(len(self.target.activities), 7)
+
+    def test_assay_activities_backref(self):
+        self.assertEqual(self.target.activities[0].assay.assay_id, 10)

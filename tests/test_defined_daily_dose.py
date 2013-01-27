@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, DefinedDailyDose
+from pychembldb import chembldb, DefinedDailyDose
 
 
 class DefinedDailyDoseTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(DefinedDailyDose).first()
+        self.target = chembldb.query(DefinedDailyDose).first()
 
     def test_atc_code(self):
         self.assertEqual(self.target.atc_code, "A01AA01")

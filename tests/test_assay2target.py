@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Assay2Target
+from pychembldb import chembldb, Assay2Target
 
 
 class Assay2TargetTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Assay2Target).filter_by(assay_id=1000).first()
+        self.target = chembldb.query(Assay2Target).filter_by(assay_id=1000).first()
 
     def test_assay_id(self):
         self.assertEqual(self.target.assay_id, 1000)

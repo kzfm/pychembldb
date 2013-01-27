@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, ProteinTherapeutic
+from pychembldb import chembldb, ProteinTherapeutic
 
 
 class ProteinTherapeuticTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(ProteinTherapeutic).first()
+        self.target = chembldb.query(ProteinTherapeutic).first()
 
     def test_molregno(self):
         self.assertEqual(self.target.molregno, 48705L)

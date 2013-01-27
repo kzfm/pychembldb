@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, MoleculeDictionary
+from pychembldb import chembldb, MoleculeDictionary
 
 
 class MoleculeDictionaryTest(unittest.TestCase):
     def setUp(self):
-        self.mol = chembl.query(MoleculeDictionary).get(1)
+        self.mol = chembldb.query(MoleculeDictionary).get(1)
 
     def test_molregno(self):
         self.assertEqual(self.mol.molregno, 1)
@@ -57,7 +57,34 @@ class MoleculeDictionaryTest(unittest.TestCase):
     def test_prodrug(self):
         self.assertEqual(self.mol.prodrug, 0)
 
-    ### Todo
-    # chembl_id, compound_record, protein_therapy
-    # coppound_properties, formulation, compound_structure
-    # molecule_hierarchy, molecule_synonym, activities
+    # mol-compound_records
+    def test_compounds(self):
+        self.assertEqual(len(self.mol.compounds), 1)
+
+    def test_compounds_backref(self):
+        self.assertEqual(self.mol.compounds[0].molregno, self.mol.molregno)
+
+    # mol-activities
+    def test_activities(self):
+        self.assertEqual(len(self.mol.activities), 2)
+
+    def test_activities_backref(self):
+        self.assertEqual(self.mol.activities[0].molregno, self.mol.molregno)
+
+    # mol-compound_structure
+    def test_structure(self):
+        self.assertEqual(len(self.mol.structures), 1)
+
+    def test_structure_backref(self):
+        self.assertEqual(self.mol.structures[0].molregno, self.mol.molregno)
+
+    # mol-compound_properties
+    def test_properties(self):
+        self.assertEqual(len(self.mol.properties), 1)
+
+    def test_properties_backref(self):
+        self.assertEqual(self.mol.properties[0].molregno, self.mol.molregno)
+
+    ### Todo (relation)
+    # chembl_id, protein_therapy, formulation
+    # molecule_hierarchy, molecule_synonym

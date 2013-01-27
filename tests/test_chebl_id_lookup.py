@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, ChemblIdLookup
+from pychembldb import chembldb, ChemblIdLookup
 
 
 class ChemblIdLookupTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(ChemblIdLookup).first()
+        self.target = chembldb.query(ChemblIdLookup).first()
 
     def test_chembl_id(self):
         self.assertEqual(self.target.chembl_id, "CHEMBL1")

@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Doc
+from pychembldb import chembldb, Doc
 
 
 class DocTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Doc).get(10)
+        self.target = chembldb.query(Doc).get(10)
 
     def test_doc_id(self):
         self.assertEqual(self.target.doc_id, 10)
@@ -42,10 +42,23 @@ class DocTest(unittest.TestCase):
     def test_doc_type(self):
         self.assertEqual(self.target.doc_type, "PUBLICATION")
 
+    # doc-assay
     def test_doc_assays(self):
         self.assertEqual(len(self.target.assays), 5)
 
     def test_doc_assays_doc(self):
         self.assertEqual(self.target.assays[0].doc.doc_id, self.target.doc_id)
 
-    # todo compounds-relationship
+    # doc-activities
+    def test_doc_activities(self):
+        self.assertEqual(len(self.target.activities), 90)
+
+    def test_doc_activities_backref(self):
+        self.assertEqual(self.target.activities[0].doc.doc_id, self.target.doc_id)
+
+    # doc-compound_records
+    def test_doc_compound_records(self):
+        self.assertEqual(len(self.target.compounds), 54)
+
+    def test_doc_compound_records_backref(self):
+        self.assertEqual(self.target.compounds[0].doc.doc_id, self.target.doc_id)

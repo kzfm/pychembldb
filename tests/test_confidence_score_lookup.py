@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, ConfidenceScore
+from pychembldb import chembldb, ConfidenceScore
 
 
 class ConfidenceScoreTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(ConfidenceScore).first()
+        self.target = chembldb.query(ConfidenceScore).first()
 
     def test_confidence_score(self):
         self.assertEqual(self.target.confidence_score, 0)

@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Source
+from pychembldb import chembldb, Source
 
 
 class SourceTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Source).get(3)
+        self.target = chembldb.query(Source).get(3)
 
     def test_src_id(self):
         self.assertEqual(self.target.src_id, 3)

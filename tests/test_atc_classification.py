@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, AtcClassification
+from pychembldb import chembldb, AtcClassification
 
 
 class AtcClassificationTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(AtcClassification).first()
+        self.target = chembldb.query(AtcClassification).first()
 
     def test_who_name(self):
         self.assertEqual(self.target.who_name, "sodium fluoride")

@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, TargetClass
+from pychembldb import chembldb, TargetClass
 
 
 class TargtClassTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(TargetClass).first()
+        self.target = chembldb.query(TargetClass).first()
 
     def test_l1(self):
         self.assertEqual(self.target.l1, "Adhesion")

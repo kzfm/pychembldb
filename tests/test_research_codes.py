@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, ResearchCode
+from pychembldb import chembldb, ResearchCode
 
 
 class ResearchCodeTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(ResearchCode).first()
+        self.target = chembldb.query(ResearchCode).first()
 
     def test_stem(self):
         self.assertEqual(self.target.stem, "4SC")

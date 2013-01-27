@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, MoleluleSynonym
+from pychembldb import chembldb, MoleluleSynonym
 
 
 class MoleluleSynonymTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(MoleluleSynonym).first()
+        self.target = chembldb.query(MoleluleSynonym).first()
 
     def test_molregno(self):
         self.assertEqual(self.target.molregno, 51)

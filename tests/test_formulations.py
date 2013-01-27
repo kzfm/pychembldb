@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, Formulation
+from pychembldb import chembldb, Formulation
 
 
 class FormulationTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Formulation).first()
+        self.target = chembldb.query(Formulation).first()
 
     def test_product_id(self):
         self.assertEqual(self.target.product_id, "PRODUCT19072")

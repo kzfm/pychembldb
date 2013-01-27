@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, CompoundProperty
+from pychembldb import chembldb, CompoundProperty
 
 
 class CompoundPropertyTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(CompoundProperty).first()
+        self.target = chembldb.query(CompoundProperty).first()
 
     def test_molregno(self):
         self.assertEqual(self.target.molregno, 1)

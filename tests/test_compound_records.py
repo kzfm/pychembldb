@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, CompoundRecord
+from pychembldb import chembldb, CompoundRecord
 
 
 class CompoundRecordTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(CompoundRecord).first()
+        self.target = chembldb.query(CompoundRecord).first()
 
     def test_record_id(self):
         self.assertEqual(self.target.record_id, 1)
@@ -26,3 +26,10 @@ class CompoundRecordTest(unittest.TestCase):
 
     def test_src_compound_id(self):
         self.assertIsNone(self.target.src_compound_id)
+
+    # comopund-activities
+    def test_activities(self):
+        self.assertEqual(len(self.target.activities), 3)
+
+    def test_activities_backref(self):
+        self.assertEqual(self.target.activities[0].record_id, self.target.record_id)

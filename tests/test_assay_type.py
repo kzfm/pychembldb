@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, AssayType
+from pychembldb import chembldb, AssayType
 
 
 class AssayTypeTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(AssayType).first()
+        self.target = chembldb.query(AssayType).first()
 
     def test_assay_type(self):
         self.assertEqual(self.target.assay_type, "A")

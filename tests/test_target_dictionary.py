@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, TargetDictionary
+from pychembldb import chembldb, TargetDictionary
 
 
 class TargtDictionaryTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(TargetDictionary).get(10)
+        self.target = chembldb.query(TargetDictionary).get(10)
 
     def test_target_type(self):
         self.assertEqual(self.target.target_type, "PROTEIN")
@@ -68,6 +68,13 @@ class TargtDictionaryTest(unittest.TestCase):
     def test_target_classes(self):
         self.assertEqual(len(self.target.target_classes), 1)
 
+    # TargetDictionary -> Assay
+    def test_target_assays(self):
+        self.assertEqual(len(self.target.assays), 13)
+
+    def test_target_assays_targets(self):
+        self.assertEqual(len(self.target.assays[0].targets), 3)
+
     # todo
     # chemblid_lookup
-    # assay2target
+    

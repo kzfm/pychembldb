@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembl, OrganismClass
+from pychembldb import chembldb, OrganismClass
 
 
 class OrganismClassTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(OrganismClass).first()
+        self.target = chembldb.query(OrganismClass).first()
 
     def test_oc_id(self):
         self.assertEqual(self.target.oc_id, 1)

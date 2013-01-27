@@ -1,11 +1,11 @@
 import unittest
 import datetime
-from pychembldb import chembl, Version
+from pychembldb import chembldb, Version
 
 
 class VersionTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembl.query(Version).first()
+        self.target = chembldb.query(Version).first()
 
     def test_name(self):
         self.assertEqual(self.target.name, "ChEMBL_14")
