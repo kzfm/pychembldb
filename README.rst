@@ -31,3 +31,10 @@ if you change engine_url, you should set CHEMBL_URI environment variable (defaul
 Basic Usage
 -----------
 
+::
+
+    from pychembldb import *
+    for target in chembldb.query(TargetDictionary).filter_by(pref_name="Tyrosine-protein kinase ABL"):
+        for assay in target.assays:
+            for activity in assay.activities:
+                print activity.published_value, activity.molecule.structures[0].standard_inchi_key
