@@ -58,7 +58,7 @@ class MoleculeDictionaryTest(unittest.TestCase):
         self.assertEqual(self.mol.prodrug, 0)
 
     # mol-compound_records
-    def test_compounds_backref(self):
+    def test_compound_backref(self):
         self.assertEqual(self.mol.compound.molregno, self.mol.molregno)
 
     # mol-activities
@@ -69,19 +69,21 @@ class MoleculeDictionaryTest(unittest.TestCase):
         self.assertEqual(self.mol.activities[0].molregno, self.mol.molregno)
 
     # mol-compound_structure
-    def test_structure(self):
-        self.assertEqual(len(self.mol.structures), 1)
-
     def test_structure_backref(self):
-        self.assertEqual(self.mol.structures[0].molregno, self.mol.molregno)
+        self.assertEqual(self.mol.structure.molregno, self.mol.molregno)
 
     # mol-compound_properties
-    def test_properties(self):
-        self.assertEqual(len(self.mol.properties), 1)
+    def test_property_backref(self):
+        self.assertEqual(self.mol.property.molregno, self.mol.molregno)
 
-    def test_properties_backref(self):
-        self.assertEqual(self.mol.properties[0].molregno, self.mol.molregno)
+    # mol-compound_formulation
+    def test_formulation_backref(self):
+        self.assertIsNone(self.mol.formulation)
+
+    # mol-hierarchy
+    # def test_hierarchy(self):
+    #     self.assertEqual(self.mol.hierarchy.molregno, self.mol.molregno)
 
     ### Todo (relation)
-    # chembl_id, protein_therapy, formulation
+    # chembl_id, protein_therapy
     # molecule_hierarchy, molecule_synonym

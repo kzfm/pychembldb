@@ -59,8 +59,10 @@ class MoleculeDictionary(Base):
     __table__ = Table('molecule_dictionary', metadata, autoload=True)
     compound = relationship('CompoundRecord', uselist=False, backref='molecule')
     activities = relationship('Activity', backref='molecule')
-    structures = relationship('CompoundStructure', backref='molecule')
-    properties = relationship('CompoundProperty', backref='molecule')
+    structure = relationship('CompoundStructure', uselist=False, backref='molecule')
+    property = relationship('CompoundProperty', uselist=False, backref='molecule')
+    formulation = relationship('Formulation', uselist=False, backref='molecule')
+    #hierarchy = relationship('MoleluleHierarchy', uselist=False, backref='molecule')
 
 
 class CurationLookup(Base):
@@ -77,6 +79,7 @@ class DefinedDailyDose(Base):
 
 class AtcClassification(Base):
     __table__ = Table('atc_classification', metadata, autoload=True)
+    #dose = relationship('DefinedDailyDose', uselist=False, backref='atc')
 
 
 class Formulation(Base):

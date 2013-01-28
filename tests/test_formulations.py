@@ -17,3 +17,6 @@ class FormulationTest(unittest.TestCase):
 
     def test_molregno(self):
         self.assertEqual(self.target.molregno, 675617L)
+
+    def test_formulation_backref(self):
+        self.assertEqual(self.target.molecule.pref_name, "INFLIXIMAB")
