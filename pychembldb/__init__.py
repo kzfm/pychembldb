@@ -4,7 +4,7 @@ from sqlalchemy.orm import create_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 uri = 'mysql://root@localhost/chembl_14'
-if os.environ['CHEMBL_URI']:
+if 'CHEMBL_URI' in os.environ:
     uri = os.environ['CHEMBL_URI']
 
 Base = declarative_base()
