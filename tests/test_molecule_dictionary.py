@@ -58,11 +58,8 @@ class MoleculeDictionaryTest(unittest.TestCase):
         self.assertEqual(self.mol.prodrug, 0)
 
     # mol-compound_records
-    def test_compounds(self):
-        self.assertEqual(len(self.mol.compounds), 1)
-
     def test_compounds_backref(self):
-        self.assertEqual(self.mol.compounds[0].molregno, self.mol.molregno)
+        self.assertEqual(self.mol.compound.molregno, self.mol.molregno)
 
     # mol-activities
     def test_activities(self):

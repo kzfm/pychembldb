@@ -14,7 +14,6 @@ metadata = MetaData(bind=engine)
 
 class Assay2Target(Base):
     __table__ = Table('assay2target', metadata, autoload=True)
-    #user_id = Column(Integer, ForeignKey('users.id'))
 
 
 class CompoundStructure(Base):
@@ -58,7 +57,7 @@ class OrganismClass(Base):
 
 class MoleculeDictionary(Base):
     __table__ = Table('molecule_dictionary', metadata, autoload=True)
-    compounds = relationship('CompoundRecord', backref='molecule')
+    compound = relationship('CompoundRecord', uselist=False, backref='molecule')
     activities = relationship('Activity', backref='molecule')
     structures = relationship('CompoundStructure', backref='molecule')
     properties = relationship('CompoundProperty', backref='molecule')
