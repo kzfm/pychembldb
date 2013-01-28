@@ -38,3 +38,10 @@ Basic Usage
         for assay in target.assays:
             for activity in assay.activities:
                 print activity.published_value, activity.molecule.structure.standard_inchi_key
+
+History
+-------
+
+0.1 (2013-01-29)
+~~~~~~~~~~~~~~~~~~
+* first release
