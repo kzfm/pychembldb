@@ -34,7 +34,7 @@ Basic Usage
 ::
 
     from pychembldb import *
-    for target in chembldb.query(TargetDictionary).filter_by(pref_name="Tyrosine-protein kinase ABL"):
+    for target in chembldb.query(Target).filter_by(pref_name="Tyrosine-protein kinase ABL"):
         for assay in target.assays:
             for activity in assay.activities:
                 print activity.published_value, activity.molecule.structure.standard_inchi_key

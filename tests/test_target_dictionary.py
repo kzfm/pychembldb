@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembldb, TargetDictionary
+from pychembldb import chembldb, Target
 
 
-class TargtDictionaryTest(unittest.TestCase):
+class TargtTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(TargetDictionary).get(10)
+        self.target = chembldb.query(Target).get(10)
 
     def test_target_type(self):
         self.assertEqual(self.target.target_type, "PROTEIN")

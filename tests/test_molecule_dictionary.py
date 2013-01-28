@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembldb, MoleculeDictionary
+from pychembldb import chembldb, Molecule
 
 
-class MoleculeDictionaryTest(unittest.TestCase):
+class MoleculeTest(unittest.TestCase):
     def setUp(self):
-        self.mol = chembldb.query(MoleculeDictionary).get(1)
+        self.mol = chembldb.query(Molecule).get(1)
 
     def test_molregno(self):
         self.assertEqual(self.mol.molregno, 1)

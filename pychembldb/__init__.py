@@ -41,21 +41,21 @@ class MoleluleHierarchy(Base):
     __table__ = Table('molecule_hierarchy', metadata, autoload=True)
 
 
-class TargetDictionary(Base):
+class Target(Base):
     __table__ = Table('target_dictionary', metadata, autoload=True)
     target_classes = relationship("TargetClass", backref='dictinary')
 
 
 class TargetType(Base):
     __table__ = Table('target_type', metadata, autoload=True)
-    target_dictionaries = relationship("TargetDictionary", backref='type')
+    target_dictionaries = relationship("Target", backref='type')
 
 
 class OrganismClass(Base):
     __table__ = Table('organism_class', metadata, autoload=True)
 
 
-class MoleculeDictionary(Base):
+class Molecule(Base):
     __table__ = Table('molecule_dictionary', metadata, autoload=True)
     compound = relationship('CompoundRecord', uselist=False, backref='molecule')
     activities = relationship('Activity', backref='molecule')
@@ -101,7 +101,7 @@ class Activity(Base):
 
 class Assay(Base):
     __table__ = Table('assays', metadata, autoload=True)
-    targets = relationship(TargetDictionary, secondary=Table('assay2target', metadata, autoload=True), backref='assays')
+    targets = relationship(Target, secondary=Table('assay2target', metadata, autoload=True), backref='assays')
     activities = relationship(Activity, backref='assay')
 
 
