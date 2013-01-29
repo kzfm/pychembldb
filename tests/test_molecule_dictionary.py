@@ -87,3 +87,15 @@ class MoleculeTest(unittest.TestCase):
     ### Todo (relation)
     # chembl_id, protein_therapy
     # molecule_hierarchy, molecule_synonym
+
+
+class MoleculeSynonymTest(unittest.TestCase):
+    def setUp(self):
+        self.mol = chembldb.query(Molecule).filter_by(chembl_id="CHEMBL941").first()
+
+    # mol-synonyms
+    def test_synonyms(self):
+        self.assertEqual(len(self.mol.synonyms), 6)
+
+    def test_synonyms_backref(self):
+        self.assertEqual(self.mol.synonyms[0].molregno, self.mol.molregno)

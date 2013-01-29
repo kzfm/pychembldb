@@ -33,11 +33,11 @@ class TargetClass(Base):
     __table__ = Table('target_class', metadata, autoload=True)
 
 
-class MoleluleSynonym(Base):
+class MoleculeSynonym(Base):
     __table__ = Table('molecule_synonyms', metadata, autoload=True)
 
 
-class MoleluleHierarchy(Base):
+class MoleculeHierarchy(Base):
     __table__ = Table('molecule_hierarchy', metadata, autoload=True)
 
 
@@ -62,7 +62,8 @@ class Molecule(Base):
     structure = relationship('CompoundStructure', uselist=False, backref='molecule')
     property = relationship('CompoundProperty', uselist=False, backref='molecule')
     formulation = relationship('Formulation', uselist=False, backref='molecule')
-    #hierarchy = relationship('MoleluleHierarchy', uselist=False, backref='molecule')
+    synonyms = relationship('MoleculeSynonym', backref='molecule')
+    #hierarchy = relationship('MoleculeHierarchy', uselist=False, backref='molecule')
 
 
 class CurationLookup(Base):
