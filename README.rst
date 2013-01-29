@@ -39,6 +39,22 @@ Basic Usage
             for activity in assay.activities:
                 print activity.published_value, activity.molecule.structure.standard_inchi_key
 
+Examples
+--------
+
+::
+
+    from pychembldb import *
+    for target in chembldb.query(Target).filter_by(pref_name="Tyrosine-protein kinase ABL"):
+        for assay in target.assays:
+            for activity in assay.activities:
+                print activity.published_value, activity.molecule.structure.standard_inchi_key
+
+::
+
+    chembldb.query(MoleculeSynonym).filter_by(synonyms="Gleevec").first().molecule.structure.canonical_smiles
+    # 'CN1CCN(Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3)CC1'
+
 History
 -------
 

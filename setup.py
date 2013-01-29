@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1'
+version = '0.1.1'
 
 setup(name='pychembldb',
       version=version,
@@ -48,8 +48,15 @@ Basic Usage
             for activity in assay.activities:
                 print activity.published_value, activity.molecule.structure.standard_inchi_key
 
+See https://github.com/kzfm/pychembldb for details.
+
 History
 -------
+
+0.1.1 (2013-01-29)
+~~~~~~~~~~~~~~~~~~
+* Several bug fixes
+* Add synonyms relation
 
 0.1 (2013-01-29)
 ~~~~~~~~~~~~~~~~~~
