@@ -19,6 +19,12 @@ Install
 
 ::
 
+    pip install pychembldb
+
+or install from github
+
+::
+
     git clone https://github.com/kzfm/pychembldb.git
     cd pychembldb
     sudo python setup.py install
