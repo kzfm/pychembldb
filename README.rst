@@ -52,11 +52,23 @@ Examples
 
 ::
 
+    for journal in chembldb.query(Doc).filter_by(doi="10.1016/S0960-894X(01)80693-4"):
+        for assay in journal.assays:
+            for activity in assay.activities:
+                print activity.published_value, activity.molecule.structure.standard_inchi_key
+
+::
+
     chembldb.query(MoleculeSynonym).filter_by(synonyms="Gleevec").first().molecule.structure.canonical_smiles
     # 'CN1CCN(Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3)CC1'
 
 History
 -------
+
+0.1.1 (2013-01-29)
+~~~~~~~~~~~~~~~~~~
+* Several bug fixes
+* Add synonyms relation
 
 0.1 (2013-01-29)
 ~~~~~~~~~~~~~~~~~~
