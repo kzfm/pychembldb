@@ -16,8 +16,8 @@ from pychembldb import chembldb, {}
 
 class {}(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(Target).get(1)
-""".format(classname, testname)
+        self.target = chembldb.query({}).get(1)
+""".format(classname, testname, classname)
 
 for c in table.columns:
     print """    def test_{}(self):
