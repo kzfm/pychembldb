@@ -10,7 +10,7 @@ class TargtTypeTest(unittest.TestCase):
         self.assertEqual(self.target_type.target_type, "ADMET")
 
     def test_target_desc(self):
-        self.assertEqual(self.target_type.target_desc, "ADMET")
+        self.assertEqual(self.target_type.target_desc, "Target is not applicable (e.g., physchem property)")
 
     def test_target_relation(self):
-        self.assertEqual(len(self.target_type.target_dictionaries), 3)
+        self.assertEqual(len(self.target_type.targets), 1)

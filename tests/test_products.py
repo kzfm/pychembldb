@@ -30,8 +30,8 @@ class ProductTest(unittest.TestCase):
     def test_parenteral(self):
         self.assertEqual(self.target.parenteral, 1)
 
-    def test_information_source(self):
-        self.assertEqual(self.target.information_source, "CDER")
+    #def test_information_source(self):
+    #    self.assertEqual(self.target.information_source, "CDER")
 
     def test_black_box_warning(self):
         self.assertIsNone(self.target.black_box_warning)

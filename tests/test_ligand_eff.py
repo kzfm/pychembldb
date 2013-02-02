@@ -1,19 +1,16 @@
-# ArgumentError: Mapper Mapper|LigandEff|ligand_eff
-# could not assemble any primary key columns for mapped table 'ligand_eff'
-#
-# import unittest
-# from pychembldb import chembl, LigandEff
+import unittest
+from pychembldb import chembldb, LigandEff
 
 
-# class LigandEffTest(unittest.TestCase):
-#     def setUp(self):
-#         self.target = chembl.query(LigandEff).first()
+class LigandEffTest(unittest.TestCase):
+    def setUp(self):
+        self.target = chembldb.query(LigandEff).first()
 
-#     def test_activity_id(self):
-#         self.assertEqual(self.target.activity_id, "")
+    def test_activity_id(self):
+        self.assertEqual(self.target.activity_id, 31864L)
 
-#     def test_bei(self):
-#         self.assertEqual(self.target.bei, "")
+    def test_bei(self):
+        self.assertEqual(self.target.bei, 14.06)
 
-#     def test_sei(self):
-#         self.assertEqual(self.target.sei, "")
+    def test_sei(self):
+        self.assertEqual(self.target.sei, 5.56)

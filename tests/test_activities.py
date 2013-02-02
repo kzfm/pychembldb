@@ -22,7 +22,7 @@ class ActivityTest(unittest.TestCase):
         self.assertEqual(self.target.molregno, 180094L)
 
     def test_relation(self):
-        self.assertEqual(self.target.relation, ">")
+        self.assertEqual(self.target.standard_relation, ">")
 
     def test_published_value(self):
         self.assertEqual(self.target.published_value, 100.0)
@@ -43,4 +43,10 @@ class ActivityTest(unittest.TestCase):
         self.assertIsNone(self.target.activity_comment)
 
     def test_published_activity_type(self):
-        self.assertEqual(self.target.published_activity_type, "IC50")
+        self.assertEqual(self.target.published_type, "IC50")
+
+    def test_predicted_binding_site(self):
+        self.assertIsNone(self.target.predicted_binding_domain)
+
+    def test_le(self):
+        self.assertIsNone(self.target.le)

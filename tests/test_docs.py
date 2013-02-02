@@ -13,7 +13,7 @@ class DocTest(unittest.TestCase):
         self.assertEqual(self.target.journal, "J. Med. Chem.")
 
     def test_year(self):
-        self.assertEqual(self.target.year, "2004")
+        self.assertEqual(self.target.year, 2004)
 
     def test_volume(self):
         self.assertEqual(self.target.volume, "47")
@@ -48,13 +48,6 @@ class DocTest(unittest.TestCase):
 
     def test_doc_assays_doc(self):
         self.assertEqual(self.target.assays[0].doc.doc_id, self.target.doc_id)
-
-    # doc-activities
-    def test_doc_activities(self):
-        self.assertEqual(len(self.target.activities), 90)
-
-    def test_doc_activities_backref(self):
-        self.assertEqual(self.target.activities[0].doc.doc_id, self.target.doc_id)
 
     # doc-compound_records
     def test_doc_compound_records(self):

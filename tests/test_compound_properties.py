@@ -10,10 +10,10 @@ class CompoundPropertyTest(unittest.TestCase):
         self.assertEqual(self.target.molregno, 1)
 
     def test_mw_freebase(self):
-        self.assertEqual(self.target.mw_freebase, 341.748)
+        self.assertEqual(self.target.mw_freebase, 341.75)
 
     def test_alogp(self):
-        self.assertEqual(self.target.alogp, 3.344)
+        self.assertEqual(self.target.alogp, 3.34)
 
     def test_hba(self):
         self.assertEqual(self.target.hba, 4)
@@ -37,19 +37,19 @@ class CompoundPropertyTest(unittest.TestCase):
         self.assertEqual(self.target.med_chem_friendly, "Y")
 
     def test_acd_most_apka(self):
-        self.assertEqual(self.target.acd_most_apka, 6.444)
+        self.assertEqual(self.target.acd_most_apka, 6.44)
 
     def test_acd_most_bpka(self):
         self.assertIsNone(self.target.acd_most_bpka)
 
     def test_acd_logp(self):
-        self.assertEqual(self.target.acd_logp, 3.186)
+        self.assertEqual(self.target.acd_logp, 3.19)
 
     def test_acd_logd(self):
-        self.assertEqual(self.target.acd_logd, 2.221)
+        self.assertEqual(self.target.acd_logd, 2.22)
 
     def test_molecular_species(self):
         self.assertEqual(self.target.molecular_species, "ACID")
 
     def test_full_mwt(self):
-        self.assertEqual(self.target.full_mwt, 341.748)
+        self.assertEqual(self.target.full_mwt, 341.75)

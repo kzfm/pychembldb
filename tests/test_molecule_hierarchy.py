@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembldb, MoleluleHierarchy
+from pychembldb import chembldb, MoleculeHierarchy
 
 
 class MoleluleHierarchyTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(MoleluleHierarchy).first()
+        self.target = chembldb.query(MoleculeHierarchy).first()
 
     def test_molregno(self):
         self.assertEqual(self.target.molregno, 1)

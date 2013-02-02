@@ -52,7 +52,7 @@ class MoleculeTest(unittest.TestCase):
         self.assertEqual(self.mol.black_box_warning, 0)
 
     def test_natural_product(self):
-        self.assertEqual(self.mol.natural_product, 0)
+        self.assertEqual(self.mol.natural_product, -1)
 
     def test_prodrug(self):
         self.assertEqual(self.mol.prodrug, 0)
@@ -60,13 +60,6 @@ class MoleculeTest(unittest.TestCase):
     # mol-compound_records
     def test_compound_backref(self):
         self.assertEqual(self.mol.compound.molregno, self.mol.molregno)
-
-    # mol-activities
-    def test_activities(self):
-        self.assertEqual(len(self.mol.activities), 2)
-
-    def test_activities_backref(self):
-        self.assertEqual(self.mol.activities[0].molregno, self.mol.molregno)
 
     # mol-compound_structure
     def test_structure_backref(self):
@@ -76,17 +69,16 @@ class MoleculeTest(unittest.TestCase):
     def test_property_backref(self):
         self.assertEqual(self.mol.property.molregno, self.mol.molregno)
 
-    # mol-compound_formulation
-    def test_formulation_backref(self):
-        self.assertIsNone(self.mol.formulation)
-
     # mol-hierarchy
-    # def test_hierarchy(self):
-    #     self.assertEqual(self.mol.hierarchy.molregno, self.mol.molregno)
+    #def test_hierarchy(self):
+    #    self.assertEqual(self.mol.hierarchy.molregno, self.mol.molregno)
+
+    # mol-compound_properties
+    def test_biotherapeutics(self):
+        self.assertIsNone(self.mol.biotherapeutics)
 
     ### Todo (relation)
     # chembl_id, protein_therapy
-    # molecule_hierarchy, molecule_synonym
 
 
 class MoleculeSynonymTest(unittest.TestCase):
@@ -95,7 +87,7 @@ class MoleculeSynonymTest(unittest.TestCase):
 
     # mol-synonyms
     def test_synonyms(self):
-        self.assertEqual(len(self.mol.synonyms), 6)
+        self.assertEqual(len(self.mol.synonyms), 7)
 
     def test_synonyms_backref(self):
         self.assertEqual(self.mol.synonyms[0].molregno, self.mol.molregno)

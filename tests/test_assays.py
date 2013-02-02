@@ -43,9 +43,6 @@ class AssayTest(unittest.TestCase):
     def test_assay_type_backref(self):
         self.assertEqual(self.target.type.assay_desc, "Functional")
 
-    def test_assay_targets(self):
-        self.assertEqual(len(self.target.targets), 1)
-
     # assay -> activity
     def test_assay_activities(self):
         self.assertEqual(len(self.target.activities), 7)
