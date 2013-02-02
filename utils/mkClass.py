@@ -8,5 +8,4 @@ for table in  metadata.tables.keys():
     print """class {}(Base):
     __table__ = Table('{}', metadata, autoload=True)
 
-
 """.format(classname, table)
