@@ -62,11 +62,16 @@ class ComponentDomain(Base):
 
 class BindingSite(Base):
     __table__ = Table('binding_sites', metadata, autoload=True)
+    sitecomponents = relationship('SiteComponent', backref='binding_site')
+    predicted_binding_domains = relationship('PredictedBindingDomain', backref='binding_site')
+    domains = relationship('Domain', secondary=Table('site_components', metadata, autoload=True), backref='binding_sites')
+    components = relationship('ComponentSequence', secondary=Table('site_components', metadata, autoload=True), backref='bindingsites')
 
 
 class Domain(Base):
     __table__ = Table('domains', metadata, autoload=True)
     componentdomains = relationship('ComponentDomain', backref='domain')
+    sites = relationship('SiteComponent', backref='domain')
     components = relationship('ComponentSequence', secondary=Table('component_domains', metadata, autoload=True), backref='domain')
 
 
@@ -102,8 +107,8 @@ class AtcClassification(Base):
     dose = relationship('DefinedDailyDose', uselist=False, backref='atc')
 
 
-class UsanStem(Base):
-    __table__ = Table('usan_stems', metadata, autoload=True)
+#class UsanStem(Base):
+#    __table__ = Table('usan_stems', metadata, autoload=True)
 
 
 ### Compounds
