@@ -10,6 +10,11 @@ Requirements
 * MySQL-python >= 1.2.4
 * SQLAlchemy >= 0.8.0b2
 
+ChEMBLdb
+~~~~~~~~
+
+* pychembldb-0.1.x support chembl_14
+* pychembldb-0.2.x support chembl_15
 
 Setup
 -----
@@ -43,7 +48,7 @@ Basic Usage
     for target in chembldb.query(Target).filter_by(pref_name="Tyrosine-protein kinase ABL"):
         for assay in target.assays:
             for activity in assay.activities:
-                print activity.published_value, activity.molecule.structure.standard_inchi_key
+                print activity.published_value, activity.compound.molecule.structure.standard_inchi_key
 
 Examples
 --------
@@ -56,7 +61,7 @@ filter activities and compound structures by Target(Protein).
     for target in chembldb.query(Target).filter_by(pref_name="Tyrosine-protein kinase ABL"):
         for assay in target.assays:
             for activity in assay.activities:
-                print activity.published_value, activity.molecule.structure.standard_inchi_key
+                print activity.published_value, activity.compound.molecule.structure.standard_inchi_key
 
 Search activities and compound structures from Journal-ID(doi).
 
@@ -65,7 +70,7 @@ Search activities and compound structures from Journal-ID(doi).
     for journal in chembldb.query(Doc).filter_by(doi="10.1016/S0960-894X(01)80693-4"):
         for assay in journal.assays:
             for activity in assay.activities:
-                print activity.published_value, activity.molecule.structure.standard_inchi_key
+                print activity.published_value, activity.compound.molecule.structure.standard_inchi_key
 
 Get SMILES from Molecule synonyms.
 
@@ -87,6 +92,10 @@ See also.
 
 History
 -------
+
+0.2.0 (2013-02-03)
+~~~~~~~~~~~~~~~~~~
+* Support ChEMBLdb 15
 
 0.1.1 (2013-01-29)
 ~~~~~~~~~~~~~~~~~~
