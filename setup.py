@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.2.0'
+version = '0.2.1'
 
 setup(name='pychembldb',
       version=version,
@@ -23,7 +23,7 @@ ChEMBLdb
 ~~~~~~~~
 
 * pychembldb-0.1.x support chembl_14
-* pychembldb-0.2.x support chembl_15
+* pychembldb-0.2.x support chembl_15 or later
 
 Setup
 -----
@@ -46,7 +46,7 @@ or install from github
 Setting up engine_url
 ~~~~~~~~~~~~~~~~~~~~~
 
-if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_14)
+if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_16)
 
 Basic Usage
 -----------
@@ -101,6 +101,10 @@ See also.
 
 History
 -------
+
+0.2.1 (2013-06-15)
+~~~~~~~~~~~~~~~~~~
+* Support ChEMBLdb 16
 
 0.2.0 (2013-02-03)
 ~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,6 @@
 import unittest
 from pychembldb import chembldb, LigandEff
+from decimal import Decimal
 
 
 class LigandEffTest(unittest.TestCase):
@@ -10,7 +11,7 @@ class LigandEffTest(unittest.TestCase):
         self.assertEqual(self.target.activity_id, 31864L)
 
     def test_bei(self):
-        self.assertEqual(self.target.bei, 14.06)
+        self.assertEqual(self.target.bei, Decimal('14.06'))
 
     def test_sei(self):
-        self.assertEqual(self.target.sei, 5.56)
+        self.assertEqual(self.target.sei, Decimal('5.56'))

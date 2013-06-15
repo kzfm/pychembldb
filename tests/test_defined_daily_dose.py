@@ -1,5 +1,6 @@
 import unittest
 from pychembldb import chembldb, DefinedDailyDose
+from decimal import Decimal
 
 
 class DefinedDailyDoseTest(unittest.TestCase):
@@ -10,7 +11,7 @@ class DefinedDailyDoseTest(unittest.TestCase):
         self.assertEqual(self.target.atc_code, "A01AA01")
 
     def test_ddd_value(self):
-        self.assertEqual(self.target.ddd_value, 1.1)
+        self.assertEqual(self.target.ddd_value, Decimal('1.10'))
 
     def test_ddd_units(self):
         self.assertEqual(self.target.ddd_units, "mg")

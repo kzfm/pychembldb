@@ -4,7 +4,7 @@ from pychembldb import chembldb, Molecule
 
 class MoleculeTest(unittest.TestCase):
     def setUp(self):
-        self.mol = chembldb.query(Molecule).get(1)
+        self.mol = chembldb.query(Molecule).first()
 
     def test_molregno(self):
         self.assertEqual(self.mol.molregno, 1)
@@ -55,7 +55,7 @@ class MoleculeTest(unittest.TestCase):
         self.assertEqual(self.mol.natural_product, -1)
 
     def test_prodrug(self):
-        self.assertEqual(self.mol.prodrug, 0)
+        self.assertEqual(self.mol.prodrug, -1)
 
     # mol-compound_records
     def test_compound_backref(self):
