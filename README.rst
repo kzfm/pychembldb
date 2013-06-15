@@ -14,7 +14,7 @@ ChEMBLdb
 ~~~~~~~~
 
 * pychembldb-0.1.x support chembl_14
-* pychembldb-0.2.x support chembl_15
+* pychembldb-0.2.x support chembl_15 or later
 
 Setup
 -----
@@ -92,6 +92,10 @@ See also.
 
 History
 -------
+
+0.2.1 (2013-06-15)
+~~~~~~~~~~~~~~~~~~
+* Support ChEMBLdb 16
 
 0.2.0 (2013-02-03)
 ~~~~~~~~~~~~~~~~~~
