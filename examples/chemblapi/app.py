@@ -83,5 +83,21 @@ def compound_by_InCHIKEY(inchikey):
     }
     return jsonify(result)
 
+# Description: Get list of compounds by Canonical SMILES
+# Description: Get list of compounds by Canonical SMILES by HTTP POST
+# Description: Get list of compounds containing the substructure represented by the given Canonical SMILES
+# Description: Get list of compounds containing the substructure represented by the given Canonical SMILES by HTTP POST
+# Description: Get list of compounds similar to the one represented by the given Canonical SMILES, at a similarity cutoff percentage score (minimum value=70%, maximum value=
+# Description: Get list of compounds similar to the one represented by the given Canonical SMILES, at a similarity cutoff percentage score (minimum value=70%, maximum value=100%) by HTTP POST
+# Description: Get the image of a given compound.
+# Description: Get individual compound bioactivities
+# Description: Get target by ChEMBLID
+# Description: Get individual target by UniProt Accession Id
+# Description: Get individual target by RefSeq Accession Id
+# Description: Get individual target bioactivities
+# Description: Get all targets
+# Description: Get assay by ChEMBLID
+# Description: Get individual assay bioactivities
+
 if __name__ == "__main__":
     app.run()
