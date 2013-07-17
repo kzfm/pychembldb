@@ -55,7 +55,7 @@ def remove_empty_file():
 def write_metadata():
     # Confidence score == 9
     with open("metadata.tsv", "w") as metadatafile:
-        metadatafile.write("assay_id\taccession\tjournal\n")
+        metadatafile.write("assay_id\taccession\tname\tjournal\n")
         for file in glob("{}/*.sdf".format(sdf_dir)):
             id = (file.split(".")[0]).split("/")[1]
             assay = chembldb.query(Assay).filter_by(assay_id=id).one()
