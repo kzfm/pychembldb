@@ -37,7 +37,7 @@ or install from github
 Setting up engine_url
 ~~~~~~~~~~~~~~~~~~~~~
 
-if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_14)
+if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_16)
 
 Basic Usage
 -----------
