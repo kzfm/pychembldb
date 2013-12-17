@@ -20,6 +20,3 @@ class CompoundStructureTest(unittest.TestCase):
 
     def test_canonical_smiles(self):
         self.assertEqual(self.target.canonical_smiles, "Cc1cc(ccc1C(=O)c2ccccc2Cl)N3N=CC(=O)NC3=O")
-
-    def test_molformula(self):
-        self.assertEqual(self.target.molformula, "C17 H12 Cl N3 O3")

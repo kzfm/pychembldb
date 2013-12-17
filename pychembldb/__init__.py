@@ -3,7 +3,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import create_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-uri = 'mysql://root@localhost/chembl_16'
+uri = 'mysql://root@localhost/chembl_17'
 if 'CHEMBL_URI' in os.environ:
     uri = os.environ['CHEMBL_URI']
 
@@ -37,7 +37,7 @@ class OrganismClass(Base):
 
 class ComponentSequence(Base):
     __table__ = Table('component_sequences', metadata, autoload=True)
-    families = relationship('ProteinFamilyClassification', secondary=Table('component_class', metadata, autoload=True), backref='component')
+    classes = relationship('ProteinClassification', secondary=Table('component_class', metadata, autoload=True), backref='component')
     synonyms = relationship('ComponentSynonym', backref='component')
     componentdomains = relationship('ComponentDomain', backref='component')
     sitecomponents = relationship('SiteComponent', backref='component')
@@ -46,9 +46,14 @@ class ComponentSequence(Base):
     binding_sites = relationship('BindingSite', secondary=Table('site_components', metadata, autoload=True), backref='component')
 
 
-class ProteinFamilyClassification(Base):
-    __table__ = Table('protein_family_classification', metadata, autoload=True)
-    components = relationship(ComponentSequence, secondary=Table('component_class', metadata, autoload=True), backref='family')
+class ProteinClassification(Base):
+    __table__ = Table('protein_classification', metadata, autoload=True)
+    components = relationship('ComponentSequence', secondary=Table('component_class', metadata, autoload=True), backref='family')
+    synonyms = relationship('ProteinClassSynonym', backref='class')
+
+
+class ProteinClassSynonym(Base):
+    __table__ = Table('protein_class_synonyms', metadata, autoload=True)
 
 
 class ComponentSynonym(Base):

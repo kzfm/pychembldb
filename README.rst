@@ -7,14 +7,15 @@
 Requirements
 ------------
 * Python 2.7 or later (not support 3.x)
-* MySQL-python >= 1.2.4
+* MySQL-python >= 1.2.4 or psycopg2 >= 2.5.1
 * SQLAlchemy >= 0.8.0b2
 
 ChEMBLdb
 ~~~~~~~~
 
 * pychembldb-0.1.x support chembl_14
-* pychembldb-0.2.x support chembl_15 or later
+* pychembldb-0.2.x support chembl_15 and chembl_16
+* pychembldb-0.3.x support chembl_17
 
 Setup
 -----
@@ -37,7 +38,7 @@ or install from github
 Setting up engine_url
 ~~~~~~~~~~~~~~~~~~~~~
 
-if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_16)
+if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_17)
 
 Basic Usage
 -----------
@@ -92,6 +93,10 @@ See also.
 
 History
 -------
+
+0.3.0 (2013-12-17)
+~~~~~~~~~~~~~~~~~~
+* Support ChEMBLdb 17
 
 0.2.1 (2013-06-15)
 ~~~~~~~~~~~~~~~~~~

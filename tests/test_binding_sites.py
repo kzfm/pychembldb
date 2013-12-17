@@ -19,7 +19,7 @@ class BindingSiteTest(unittest.TestCase):
         self.assertEqual(len(self.target.sitecomponents), 1)
 
     def test_predicted_binding_domains(self):
-        self.assertEqual(len(self.target.predicted_binding_domains), 68)
+        self.assertEqual(len(self.target.predicted_binding_domains), 0)
 
     def test_components(self):
         self.assertEqual(len(self.target.components), 1)
