@@ -10,7 +10,7 @@ class AssayTypeTest(unittest.TestCase):
         self.assertEqual(self.target.assay_type, "A")
 
     def test_assay_desc(self):
-        self.assertEqual(self.target.assay_desc, "ADMET")
+        self.assertEqual(self.target.assay_desc, "ADME")
 
 # too slow but pass the test
 #    def test_assays(self):

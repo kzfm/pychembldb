@@ -8,10 +8,10 @@ class VersionTest(unittest.TestCase):
         self.target = chembldb.query(Version).first()
 
     def test_name(self):
-        self.assertEqual(self.target.name, "ChEMBL_17")
+        self.assertEqual(self.target.name, "ChEMBL_18")
 
     def test_creation_date(self):
-        self.assertEqual(self.target.creation_date, datetime.date(2013, 8, 29))
+        self.assertEqual(self.target.creation_date, datetime.date(2014, 3, 12))
 
     def test_comments(self):
-        self.assertEqual(self.target.comments, "ChEMBL Release 17")
+        self.assertEqual(self.target.comments, "ChEMBL Release 18")

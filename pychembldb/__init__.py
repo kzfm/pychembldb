@@ -3,7 +3,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import create_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-uri = 'mysql://root@localhost/chembl_17'
+uri = 'mysql://root@localhost/chembl_18'
 if 'CHEMBL_URI' in os.environ:
     uri = os.environ['CHEMBL_URI']
 
@@ -13,26 +13,25 @@ metadata = MetaData(bind=engine)
 
 
 ### Target
-class Cell(Base):
+class CellDictionary(Base):
     __table__ = Table('cell_dictionary', metadata, autoload=True)
 
 
-class Target(Base):
+class TargetDictionary(Base):
     __table__ = Table('target_dictionary', metadata, autoload=True)
     components = relationship('ComponentSequence', secondary=Table('target_components', metadata, autoload=True), backref='target')
     assays = relationship('Assay', backref='target')
     binding_sites = relationship('BindingSite', backref='target')
     #predicted_binding_domains = relationship('PredictedBindingDomain', backref='target')
 
-
 class TargetType(Base):
     __table__ = Table('target_type', metadata, autoload=True)
-    targets = relationship('Target', backref='type')
+    targets = relationship('TargetDictionary', backref='type')
 
 
 class OrganismClass(Base):
     __table__ = Table('organism_class', metadata, autoload=True)
-    #targets = relationship('Target', backref='organism')
+    #targets = relationship('TargetDictionary', backref='organism')
 
 
 class ComponentSequence(Base):
@@ -41,7 +40,7 @@ class ComponentSequence(Base):
     synonyms = relationship('ComponentSynonym', backref='component')
     componentdomains = relationship('ComponentDomain', backref='component')
     sitecomponents = relationship('SiteComponent', backref='component')
-    targets = relationship('Target', secondary=Table('target_components', metadata, autoload=True), backref='component')
+    targets = relationship('TargetDictionary', secondary=Table('target_components', metadata, autoload=True), backref='component')
     domains = relationship('Domain', secondary=Table('component_domains', metadata, autoload=True), backref='component')
     binding_sites = relationship('BindingSite', secondary=Table('site_components', metadata, autoload=True), backref='component')
 
@@ -133,7 +132,7 @@ class ResearchCompany(Base):
     __table__ = Table('research_companies', metadata, autoload=True)
 
 
-class Molecule(Base):
+class MoleculeDictionary(Base):
     __table__ = Table('molecule_dictionary', metadata, autoload=True)
     compound = relationship('CompoundRecord', uselist=False, backref='molecule')
     structure = relationship('CompoundStructure', uselist=False, backref='molecule')
@@ -172,11 +171,11 @@ class BioComponentSequence(Base):
 
 
 ### Exp Data
-class ActivityStd(Base):
+class ActivityStdLookup(Base):
     __table__ = Table('activity_stds_lookup', metadata, autoload=True)
 
 
-class DataValidity(Base):
+class DataValidityLookup(Base):
     __table__ = Table('data_validity_lookup', metadata, autoload=True)
     activities = relationship('Activity', backref='datavalidity')
 
@@ -186,7 +185,7 @@ class AssayType(Base):
     assays = relationship('Assay', backref='type')
 
 
-class Curation(Base):
+class CurationLookup(Base):
     __table__ = Table('curation_lookup', metadata, autoload=True)
     assays = relationship('Assay', backref='curation')
 
@@ -196,7 +195,7 @@ class RelationshipType(Base):
     assays = relationship('Assay', backref='relationship')
 
 
-class ConfidenceScore(Base):
+class ConfidenceScoreLookup(Base):
     __table__ = Table('confidence_score_lookup', metadata, autoload=True)
     assays = relationship('Assay', backref='confidencescore')
 
@@ -226,7 +225,7 @@ class Source(Base):
 
 
 ### Etc
-class ChemblId(Base):
+class ChemblIdLookup(Base):
     __table__ = Table('chembl_id_lookup', metadata, autoload=True)
 
 
@@ -236,3 +235,14 @@ class Version(Base):
 
 ### Session
 chembldb = create_session(bind=engine)
+
+
+### synonyms
+Cell = CellDictionary
+Target = TargetDictionary
+Molecule = MoleculeDictionary
+Curation = CurationLookup
+DataValidity = DataValidityLookup
+ActivityStd = ActivityStdLookup
+ConfidenceScore = ConfidenceScoreLookup
+ChemblId = ChemblIdLookup

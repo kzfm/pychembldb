@@ -1,10 +1,10 @@
 import unittest
-from pychembldb import chembldb, ActivityStd
+from pychembldb import chembldb, ActivityStdLookup
 
 
 class ActivityStdTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(ActivityStd).get(1)
+        self.target = chembldb.query(ActivityStdLookup).get(1)
 
     def test_std_act_id(self):
         self.assertEqual(self.target.std_act_id, 1)

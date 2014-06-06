@@ -27,9 +27,6 @@ class MoleculeTest(unittest.TestCase):
     def test_structure_type(self):
         self.assertEqual(self.mol.structure_type, "MOL")
 
-    def test_chebi_id(self):
-        self.assertEqual(self.mol.chebi_id, 100001L)
-
     def test_chebi_par_id(self):
         self.assertIsNone(self.mol.chebi_par_id)
 

@@ -59,4 +59,4 @@ class CompoundPropertyTest(unittest.TestCase):
         self.assertEqual(self.target.mw_monoisotopic, Decimal('341.0567'))
 
     def test_full_molformula(self):
-        self.assertEqual(self.target.full_molformula, "C17 H12 Cl N3 O3")
+        self.assertEqual(self.target.full_molformula, "C17H12ClN3O3")
