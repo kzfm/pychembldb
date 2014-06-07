@@ -40,6 +40,17 @@ Setting up engine_url
 
 if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_18)
 
+ex) PostgreSQL
+
+::
+
+    export CHEMBL_URI="postgresql+psycopg2://localhost/chembl_18"
+
+    or
+
+    export CHEMBL_URI="postgresql+psycopg2://USER:PASSWORD@localhost/chembl_18"    
+
+
 Basic Usage
 -----------
 
@@ -89,10 +100,15 @@ Count the number of MedChem Friendly Compounds.
 See also.
 
 * http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html
-* ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_14_erd.png
+* ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_18_erd.png
 
 History
 -------
+
+0.3.4 (2014-06-07)
+~~~~~~~~~~~~~~~~~~
+* Update document
+* Support ATC Classifications
 
 0.3.3 (2014-06-06)
 ~~~~~~~~~~~~~~~~~~

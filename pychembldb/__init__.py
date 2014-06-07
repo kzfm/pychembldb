@@ -96,6 +96,7 @@ class LigandEff(Base):
 class Product(Base):
     __table__ = Table('products', metadata, autoload=True)
     formulations = relationship('Formulation', backref='product')
+    molecules = relationship('MoleculeDictionary', secondary=Table('formulations', metadata, autoload=True), backref='mol_products')
 
 
 class DefinedDailyDose(Base):
@@ -109,6 +110,8 @@ class Formulation(Base):
 class AtcClassification(Base):
     __table__ = Table('atc_classification', metadata, autoload=True)
     dose = relationship('DefinedDailyDose', uselist=False, backref='atc')
+    molecules = relationship('MoleculeDictionary', secondary=Table('molecule_atc_classification', metadata, autoload=True), backref='atcs')
+    defined_daily_dose = relationship('DefinedDailyDose', uselist=False, backref='atc_classification')
 
 
 #class UsanStem(Base):
@@ -141,6 +144,8 @@ class MoleculeDictionary(Base):
     synonyms = relationship('MoleculeSynonym', backref='molecule')
     biotherapeutics = relationship('Biotherapeutics', uselist=False, backref='molecule')
     #hierarchy = relationship('MoleculeHierarchy', uselist=False, backref='molecule')
+    atc_classifications = relationship('AtcClassification', secondary=Table('molecule_atc_classification', metadata, autoload=True), backref='atc_molecules')
+    products = relationship('MoleculeDictionary', secondary=Table('formulations', metadata, autoload=True), backref='product_molecules')
 
 
 class MoleculeSynonym(Base):
