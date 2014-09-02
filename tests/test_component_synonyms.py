@@ -7,7 +7,7 @@ class ComponentSynonymTest(unittest.TestCase):
         self.target = chembldb.query(ComponentSynonym).filter_by(component_id=7868).first()
 
     def test_compsyn_id(self):
-        self.assertEqual(self.target.compsyn_id, 306778)
+        self.assertEqual(self.target.compsyn_id, 397225)
 
     def test_component_id(self):
         self.assertEqual(self.target.component_id, 7868)

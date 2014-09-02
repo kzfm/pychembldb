@@ -25,7 +25,7 @@ class DomainTest(unittest.TestCase):
         self.assertEqual(len(self.target.sites), 441)
 
     def test_componentdomains(self):
-        self.assertEqual(len(self.target.componentdomains), 573)
+        self.assertEqual(len(self.target.componentdomains), 588)
 
     def test_domains(self):
-        self.assertEqual(len(self.target.components), 569)
+        self.assertEqual(len(self.target.components), 583)

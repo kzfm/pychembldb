@@ -34,4 +34,4 @@ class ComponentSequenceTest(unittest.TestCase):
         self.assertEqual(self.target.db_source, "SWISS-PROT")
 
     def test_db_version(self):
-        self.assertEqual(self.target.db_version, "2014_01")
+        self.assertEqual(self.target.db_version, "2014_05")
