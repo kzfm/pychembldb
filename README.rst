@@ -108,51 +108,6 @@ See also.
 Test Coverage
 --------
 
-Done
-~~~~~
-
-- Compound Property
-- Compound Records
-- Molecular Dictionary
-- Docs
-- Source
-- Version
-- ChEMBL ID Lookup
-- ATC Classification
-- Defined Daily Dose
-- Usan Stems
-- Formulation
-- Products
-- Activities
-- Activity Stds Lookup
-- Assays
-- Curation
-- Relationship Type
-- Assay Type
-- Data Validity Lookup
-- Confident Score
-- Predicted Binding Domain
-- Target Type
-- Target Dictionary
-- Component Sequences
-- Component synonyms
-- Protein Classification
-- Protein Class synonyms
-- Organism Class
-- Cell Dictionary
-- Binding Sites
-- Site components
-- Domains
-- Component Domains
-- Component Synonyms
-- Biotherapeutics
-- Drug Indication
-- Indication refs
-- Action Type
-- Drug Mechanism
-- Mechanism refs
-
-
 TBD
 ~~~~
 
