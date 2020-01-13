@@ -117,6 +117,19 @@ class AtcClassification(Base):
 class UsanStem(Base):
     __table__ = Table('usan_stems', metadata, autoload=True)
 
+### Mechanism/Indication
+
+class DrugIndication(Base):
+    __table__ = Table('drug_indication', metadata, autoload=True)
+    refs = relationship('IndicationRefs', backref='indication')
+
+class IndicationRefs(Base):
+    __table__ = Table('indication_refs', metadata, autoload=True)
+
+
+class DrugMechanism(Base):
+    __table__ = Table('drug_mechanism', metadata, autoload=True)
+
 
 ### Compounds
 class CompoundProperty(Base):
@@ -251,3 +264,4 @@ DataValidity = DataValidityLookup
 ActivityStd = ActivityStdLookup
 ConfidenceScore = ConfidenceScoreLookup
 ChemblId = ChemblIdLookup
+Indication = DrugIndication

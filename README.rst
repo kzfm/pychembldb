@@ -35,21 +35,23 @@ or install from github
     git clone https://github.com/kzfm/pychembldb.git
     cd pychembldb
     sudo python setup.py install
+    or 
+    pip install -e .
 
 Setting up engine_url
 ~~~~~~~~~~~~~~~~~~~~~
 
-if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_18)
+if you change engine_url, you should set CHEMBL_URI environment variable (default:mysql://root@localhost/chembl_25)
 
 ex) PostgreSQL
 
 ::
 
-    export CHEMBL_URI="postgresql+psycopg2://localhost/chembl_18"
+    export CHEMBL_URI="postgresql+psycopg2://localhost/chembl_25"
 
     or
 
-    export CHEMBL_URI="postgresql+psycopg2://USER:PASSWORD@localhost/chembl_18"    
+    export CHEMBL_URI="postgresql+psycopg2://USER:PASSWORD@localhost/chembl_25"    
 
 
 Basic Usage
@@ -130,7 +132,7 @@ Done
 - Data Validity Lookup
 - Confident Score
 - Predicted Binding Domain
-- Taget Type
+- Target Type
 - Target Dictionary
 - Component Sequences
 - Component synonyms
@@ -144,6 +146,8 @@ Done
 - Component Domains
 - Component Synonyms
 - Biotherapeutics
+- Drug Indication
+- Indication refs
 
 TBD
 ~~~~
@@ -171,8 +175,6 @@ TBD
 - Metabolism
 - Metabolism refs
 - Drug Mechanism
-- Drug Indication
-- Indication refs
 - Action Type
 - Mechanism refs
 - Tissue Dictionary
