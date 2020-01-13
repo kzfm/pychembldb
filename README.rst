@@ -16,7 +16,7 @@ ChEMBLdb
 * pychembldb-0.1.x support chembl_14 and Python2.7
 * pychembldb-0.2.x support chembl_15, 16 and Python2.7
 * pychembldb-0.3.x support chembl_17,18,19 and Python2.7
-* pychembldb-0.4.0 support chembl_25 and Python3.7
+* pychembldb-0.4.0 support chembl_25 and Python3.7 (Not yet)
 
 Setup
 -----
