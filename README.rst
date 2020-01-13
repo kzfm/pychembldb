@@ -148,6 +148,10 @@ Done
 - Biotherapeutics
 - Drug Indication
 - Indication refs
+- Action Type
+- Drug Mechanism
+- Mechanism refs
+
 
 TBD
 ~~~~
@@ -174,9 +178,6 @@ TBD
 - Bioassay Ontology
 - Metabolism
 - Metabolism refs
-- Drug Mechanism
-- Action Type
-- Mechanism refs
 - Tissue Dictionary
 - Variant sequences
 - Component GO

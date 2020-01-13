@@ -2,7 +2,7 @@ import unittest
 from pychembldb import chembldb, IndicationRefs
 
 
-class DrugindicationTest(unittest.TestCase):
+class IndicationRefsTest(unittest.TestCase):
     def setUp(self):
         self.target = chembldb.query(IndicationRefs).filter_by(drugind_id=22612).first()
 

@@ -123,13 +123,23 @@ class DrugIndication(Base):
     __table__ = Table('drug_indication', metadata, autoload=True)
     refs = relationship('IndicationRefs', backref='indication')
 
+
 class IndicationRefs(Base):
     __table__ = Table('indication_refs', metadata, autoload=True)
 
 
 class DrugMechanism(Base):
     __table__ = Table('drug_mechanism', metadata, autoload=True)
+    refs = relationship('MechanismRefs', backref='mechanism')
 
+
+class ActionType(Base):
+    __table__ = Table('action_type', metadata, autoload=True)
+    mechanisms = relationship('DrugMechanism', backref='actiontype')
+
+
+class MechanismRefs(Base):
+    __table__ = Table('mechanism_refs', metadata, autoload=True)
 
 ### Compounds
 class CompoundProperty(Base):
