@@ -3,7 +3,7 @@ from sqlalchemy import *
 from sqlalchemy.orm import create_session, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-uri = 'mysql://root@localhost/chembl_18'
+uri = 'mysql://root@localhost/chembl_25'
 if 'CHEMBL_URI' in os.environ:
     uri = os.environ['CHEMBL_URI']
 
@@ -114,8 +114,8 @@ class AtcClassification(Base):
     defined_daily_dose = relationship('DefinedDailyDose', uselist=False, backref='atc_classification')
 
 
-#class UsanStem(Base):
-#    __table__ = Table('usan_stems', metadata, autoload=True)
+class UsanStem(Base):
+    __table__ = Table('usan_stems', metadata, autoload=True)
 
 
 ### Compounds

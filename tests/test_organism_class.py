@@ -10,7 +10,7 @@ class OrganismClassTest(unittest.TestCase):
         self.assertEqual(self.target.oc_id, 1)
 
     def test_tax_id(self):
-        self.assertEqual(self.target.tax_id, 10030L)
+        self.assertEqual(self.target.tax_id, 10030)
 
     def test_l1(self):
         self.assertEqual(self.target.l1, "Eukaryotes")

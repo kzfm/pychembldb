@@ -24,3 +24,5 @@ class ProteinClassificationTest(unittest.TestCase):
     def test_definition(self):
         self.assertEqual(self.target.definition, "Root of the ChEMBL protein family classification")
 
+    def test_class_level(self):
+        self.assertEqual(self.target.class_level, 0)

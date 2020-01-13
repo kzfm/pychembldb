@@ -17,7 +17,7 @@ class ProductTest(unittest.TestCase):
         self.assertEqual(self.target.trade_name, "PAREDRINE")
 
     def test_approval_date(self):
-        self.assertEqual(self.target.approval_date, datetime.date(1982, 1, 1))
+        self.assertEqual(self.target.approval_date, datetime.datetime(1982, 1, 1, 0, 0))
 
     def test_ad_type(self):
         self.assertEqual(self.target.ad_type, "DISCN")

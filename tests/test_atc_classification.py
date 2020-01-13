@@ -24,8 +24,8 @@ class AtcClassificationTest(unittest.TestCase):
     def test_level5(self):
         self.assertEqual(self.target.level5, "A01AA01")
 
-    def test_who_id(self):
-        self.assertEqual(self.target.who_id, "who0001")
+    #def test_who_id(self):
+    #    self.assertEqual(self.target.who_id, "who0001")
 
     def test_level1_description(self):
         self.assertEqual(self.target.level1_description, "ALIMENTARY TRACT AND METABOLISM")

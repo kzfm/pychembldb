@@ -7,13 +7,13 @@ class ComponentSynonymTest(unittest.TestCase):
         self.target = chembldb.query(ComponentSynonym).filter_by(component_id=7868).first()
 
     def test_compsyn_id(self):
-        self.assertEqual(self.target.compsyn_id, 397225)
+        self.assertEqual(self.target.compsyn_id, 1076921)
 
     def test_component_id(self):
         self.assertEqual(self.target.component_id, 7868)
 
     def test_component_synonym(self):
-        self.assertEqual(self.target.component_synonym, "gB")
+        self.assertEqual(self.target.component_synonym, "Envelope glycoprotein B")
 
     def test_syn_type(self):
-        self.assertEqual(self.target.syn_type, "GENE_SYMBOL")
+        self.assertEqual(self.target.syn_type, "UNIPROT")

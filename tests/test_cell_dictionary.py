@@ -22,5 +22,20 @@ class CellTest(unittest.TestCase):
         self.assertEqual(self.target.cell_source_organism, "Cricetulus griseus")
 
     def test_cell_source_tax_id(self):
-        self.assertEqual(self.target.cell_source_tax_id, 10029L)
+        self.assertEqual(self.target.cell_source_tax_id, 10029)
+
+    def test_clo_id(self):
+        self.assertEqual(self.target.clo_id, None)
+
+    def test_efo_id(self):
+        self.assertEqual(self.target.efo_id, None)
+
+    def test_cellosaurus_id(self):
+        self.assertEqual(self.target.cellosaurus_id, "CVCL_4704")
+
+    def test_cl_lincs_id(self):
+        self.assertEqual(self.target.cl_lincs_id, None)
+
+    def test_cembl_id(self):
+        self.assertEqual(self.target.chembl_id, "CHEMBL3307241")
 

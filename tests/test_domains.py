@@ -4,10 +4,10 @@ from pychembldb import chembldb, Domain
 
 class DomainTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(Domain).first()
+        self.target = chembldb.query(Domain).filter_by(source_domain_id="PF00001").first()
 
     def test_domain_id(self):
-        self.assertEqual(self.target.domain_id, 2627L)
+        self.assertEqual(self.target.domain_id, 2627)
 
     def test_domain_type(self):
         self.assertEqual(self.target.domain_type, "Pfam-A")
@@ -22,10 +22,10 @@ class DomainTest(unittest.TestCase):
         self.assertEqual(self.target.domain_description, None)
 
     def test_sites(self):
-        self.assertEqual(len(self.target.sites), 441)
+        self.assertEqual(len(self.target.sites), 689)
 
     def test_componentdomains(self):
-        self.assertEqual(len(self.target.componentdomains), 588)
+        self.assertEqual(len(self.target.componentdomains), 699)
 
     def test_domains(self):
-        self.assertEqual(len(self.target.components), 583)
+        self.assertEqual(len(self.target.components), 693)

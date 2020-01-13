@@ -10,7 +10,7 @@ class CompoundRecordTest(unittest.TestCase):
         self.assertEqual(self.target.record_id, 1)
 
     def test_molregno(self):
-        self.assertEqual(self.target.molregno, 41)
+        self.assertEqual(self.target.molregno, 1798298)
 
     def test_doc_id(self):
         self.assertEqual(self.target.doc_id, 11788)

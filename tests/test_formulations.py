@@ -4,7 +4,7 @@ from pychembldb import chembldb, Formulation
 
 class FormulationTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(Formulation).filter_by(product_id="PRODUCT_017641_001").first()
+        self.target = chembldb.query(Formulation).filter_by(product_id="PRODUCT_017641_001").filter_by(molregno=674619).first()
 
     def test_product_id(self):
         self.assertEqual(self.target.product_id, "PRODUCT_017641_001")

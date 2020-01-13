@@ -12,11 +12,14 @@ class AssayTest(unittest.TestCase):
     def test_assay_type(self):
         self.assertEqual(self.target.assay_type, "F")
 
+    def test_assay_test_type(self):
+        self.assertIsNone(self.target.assay_test_type)
+
     def test_description(self):
         self.assertEqual(self.target.description, "In vitro cell cytotoxicity against 143B-LTK cell lines expressed in HSV-1 TK")
 
     def test_doc_id(self):
-        self.assertEqual(self.target.doc_id, 17430L)
+        self.assertEqual(self.target.doc_id, 17430)
 
     def test_src_id(self):
         self.assertEqual(self.target.src_id, 1)
@@ -34,10 +37,25 @@ class AssayTest(unittest.TestCase):
         self.assertEqual(self.target.assay_organism, "Homo sapiens")
 
     def test_assay_tax_id(self):
-        self.assertEqual(self.target.assay_tax_id, 9606L)
+        self.assertEqual(self.target.assay_tax_id, 9606)
 
     def test_assay_strain(self):
         self.assertIsNone(self.target.assay_strain)
+
+    def test_assay_tissue(self):
+        self.assertIsNone(self.target.assay_tissue)
+
+    def test_assay_cell_type(self):
+        self.assertEqual(self.target.assay_cell_type, "143B-LTK")
+
+    def test_assay_subcellular_fraction(self):
+        self.assertIsNone(self.target.assay_subcellular_fraction)
+
+    def test_src_assay_id(self):
+        self.assertIsNone(self.target.src_assay_id)
+
+    def test_aidx(self):
+        self.assertEqual(self.target.aidx, "CLD0")
 
     # assay -> assay_type
     def test_assay_type_backref(self):

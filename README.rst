@@ -6,16 +6,17 @@
 
 Requirements
 ------------
-* Python 2.7 or later (not support 3.x)
+* Python 3.7 or later (not support 2.x)
 * MySQL-python >= 1.2.4 or psycopg2 >= 2.5.1
-* SQLAlchemy >= 0.8.0b2
+* SQLAlchemy >= 1.3.1
 
 ChEMBLdb
 ~~~~~~~~
 
-* pychembldb-0.1.x support chembl_14
-* pychembldb-0.2.x support chembl_15 and chembl_16
-* pychembldb-0.3.x support chembl_17,18,19
+* pychembldb-0.1.x support chembl_14 and Python2.7
+* pychembldb-0.2.x support chembl_15, 16 and Python2.7
+* pychembldb-0.3.x support chembl_17,18,19 and Python2.7
+* pychembldb-0.4.0 support chembl_25 and Python3.7
 
 Setup
 -----
@@ -99,8 +100,87 @@ Count the number of MedChem Friendly Compounds.
 
 See also.
 
-* http://docs.sqlalchemy.org/en/rel_0_8/orm/tutorial.html
-* ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_18_erd.png
+* https://docs.sqlalchemy.org/en/13/
+* ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_25_schema.png
+
+Test Coverage
+--------
+
+Done
+~~~~~
+
+- Compound Property
+- Compound Records
+- Molecular Dictionary
+- Docs
+- Source
+- Version
+- ChEMBL ID Lookup
+- ATC Classification
+- Defined Daily Dose
+- Usan Stems
+- Formulation
+- Products
+- Activities
+- Activity Stds Lookup
+- Assays
+- Curation
+- Relationship Type
+- Assay Type
+- Data Validity Lookup
+- Confident Score
+- Predicted Binding Domain
+- Taget Type
+- Target Dictionary
+- Component Sequences
+- Component synonyms
+- Protein Classification
+- Protein Class synonyms
+- Organism Class
+- Cell Dictionary
+- Binding Sites
+- Site components
+- Domains
+- Component Domains
+- Component Synonyms
+- Biotherapeutics
+
+TBD
+~~~~
+
+- Molecular Hierarchy
+- Compoud structures
+- Biotherapeutic Components
+- Bio Component Sequences
+- Compound Structure Alerts
+- Structual Alerts
+- Structual Alert Sets  
+- Molecule synonyms
+- Research Stem
+- Research Components
+- Hrac Classification
+- Irac Classification
+- Frac Classification
+- Product Patents
+- Patent Use Codes
+- Assay Classification
+- Assay Parameters
+- Activity Supp
+- Activity Property
+- Bioassay Ontology
+- Metabolism
+- Metabolism refs
+- Drug Mechanism
+- Drug Indication
+- Indication refs
+- Action Type
+- Mechanism refs
+- Tissue Dictionary
+- Variant sequences
+- Component GO
+- GO Classification
+- Protein Family Classification
+
 
 History
 -------

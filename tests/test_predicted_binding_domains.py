@@ -4,13 +4,13 @@ from pychembldb import chembldb, PredictedBindingDomain
 
 class PredictedBindingDomainTest(unittest.TestCase):
     def setUp(self):
-        self.target = chembldb.query(PredictedBindingDomain).get(1)
+        self.target = chembldb.query(PredictedBindingDomain).filter_by(site_id=1620).first()
 
     def test_predbind_id(self):
-        self.assertEqual(self.target.predbind_id, 1)
+        self.assertEqual(self.target.predbind_id, 2532444)
 
     def test_activity_id(self):
-        self.assertEqual(self.target.activity_id, 470000L)
+        self.assertEqual(self.target.activity_id, 397754)
 
     def test_site_id(self):
         self.assertEqual(self.target.site_id, 1620)
