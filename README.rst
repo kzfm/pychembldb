@@ -111,8 +111,6 @@ Test Coverage
 TBD
 ~~~~
 
-- Structual Alerts
-- Structual Alert Sets  
 - Assay Classification
 - Assay Parameters
 - Activity Supp

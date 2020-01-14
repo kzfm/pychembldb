@@ -230,6 +230,15 @@ class BioComponentSequence(Base):
     therapeutics = relationship('Biotherapeutics', secondary=Table('biotherapeutic_components', metadata, autoload=True), backref='component')
 
 
+class StructuralAlert(Base):
+    __table__ = Table('structural_alerts', metadata, autoload=True)
+    molecules = relationship('MoleculeDictionary', secondary=Table('compound_structural_alerts', metadata, autoload=True), backref='alerts')
+
+
+class StructuralAlertSet(Base):
+    __table__ = Table('structural_alert_sets', metadata, autoload=True)
+    alerts = relationship('StructuralAlert', backref='alert_set')  
+
 ### Exp Data
 class ActivityStdLookup(Base):
     __table__ = Table('activity_stds_lookup', metadata, autoload=True)
