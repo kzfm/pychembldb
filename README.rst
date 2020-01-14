@@ -113,8 +113,6 @@ TBD
 
 - Structual Alerts
 - Structual Alert Sets  
-- Product Patents
-- Patent Use Codes
 - Assay Classification
 - Assay Parameters
 - Activity Supp

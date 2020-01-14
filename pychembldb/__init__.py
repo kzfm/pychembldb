@@ -130,6 +130,13 @@ class FracClassification(Base):
     __table__ = Table('frac_classification', metadata, autoload=True)
 
 
+class PatentUseCode(Base):
+    __table__ = Table('patent_use_codes', metadata, autoload=True)
+    products = relationship('Product', secondary=Table('product_patents', metadata, autoload=True), backref='codes')
+    patents = relationship('ProductPatent', backref='code')
+
+class ProductPatent(Base):
+    __table__ = Table('product_patents', metadata, autoload=True)
 
 ### Mechanism/Indication
 
