@@ -119,9 +119,6 @@ TBD
 - Molecule synonyms
 - Research Stem
 - Research Components
-- Hrac Classification
-- Irac Classification
-- Frac Classification
 - Product Patents
 - Patent Use Codes
 - Assay Classification
@@ -129,8 +126,6 @@ TBD
 - Activity Supp
 - Activity Property
 - Bioassay Ontology
-- Metabolism
-- Metabolism refs
 - Tissue Dictionary
 - Variant sequences
 - Component GO

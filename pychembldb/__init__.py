@@ -117,6 +117,20 @@ class AtcClassification(Base):
 class UsanStem(Base):
     __table__ = Table('usan_stems', metadata, autoload=True)
 
+
+class HracClassification(Base):
+    __table__ = Table('hrac_classification', metadata, autoload=True)
+
+
+class IracClassification(Base):
+    __table__ = Table('irac_classification', metadata, autoload=True)
+
+
+class FracClassification(Base):
+    __table__ = Table('frac_classification', metadata, autoload=True)
+
+
+
 ### Mechanism/Indication
 
 class DrugIndication(Base):
@@ -140,6 +154,17 @@ class ActionType(Base):
 
 class MechanismRefs(Base):
     __table__ = Table('mechanism_refs', metadata, autoload=True)
+
+### Metbolism
+
+class Metabolism(Base):
+    __table__ = Table('metabolism', metadata, autoload=True)
+    refs = relationship('MetabolismRefs', backref='metabolism')
+
+
+class MetabolismRefs(Base):
+    __table__ = Table('metabolism_refs', metadata, autoload=True)
+
 
 ### Compounds
 class CompoundProperty(Base):
