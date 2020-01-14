@@ -111,14 +111,8 @@ Test Coverage
 TBD
 ~~~~
 
-- Molecular Hierarchy
-- Compoud structures
-- Bio Component Sequences
 - Structual Alerts
 - Structual Alert Sets  
-- Molecule synonyms
-- Research Stem
-- Research Components
 - Product Patents
 - Patent Use Codes
 - Assay Classification
