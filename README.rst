@@ -112,7 +112,6 @@ TBD
 ~~~~
 
 - Assay Parameters
-- Activity Supp
 - Activity Property
 
 History

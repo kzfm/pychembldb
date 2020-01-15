@@ -308,6 +308,18 @@ class BioassayOntology(Base):
     __table__ = Table('bioassay_ontology', metadata, autoload=True)
 
 
+class ActivityProperty(Base):
+    __table__ = Table('activity_properties', metadata, autoload=True)
+
+
+class ActivitySupp(Base):
+    __table__ = Table('activity_supp', metadata, autoload=True)
+
+
+class AssayParameter(Base):
+    __table__ = Table('assay_parameters', metadata, autoload=True)
+
+
 ### Doc
 class Doc(Base):
     __table__ = Table('docs', metadata, autoload=True)
