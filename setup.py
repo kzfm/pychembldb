@@ -9,6 +9,7 @@ setup(name='pychembldb',
       version=version,
       description="ChEMBLdb interface for Python",
       long_description=long_description,
+      long_description_content_type="text/x-rst",
       classifiers=[
         'License :: OSI Approved :: MIT License',
         'Topic :: Scientific/Engineering :: Chemistry',
