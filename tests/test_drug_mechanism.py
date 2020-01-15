@@ -30,3 +30,14 @@ class DrugMechanismTest(unittest.TestCase):
     def test_binding_site_comment(self):
         self.assertEqual(self.target.binding_site_comment, None)
 
+    def test_molecule(self):
+        self.assertEqual(self.target.molecule.pref_name, "METHAZOLAMIDE")
+
+    def test_compound_record(self):
+        self.assertEqual(self.target.compound.compound_name, "Methazolamide")
+
+    def test_binding_site(self):
+        self.assertEqual(self.target.binding_site, None)
+
+    def test_target(self):
+        self.assertEqual(self.target.target.pref_name, "Carbonic anhydrase VII")

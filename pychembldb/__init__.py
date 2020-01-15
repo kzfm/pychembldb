@@ -171,6 +171,10 @@ class IndicationRefs(Base):
 class DrugMechanism(Base):
     __table__ = Table('drug_mechanism', metadata, autoload=True)
     refs = relationship('MechanismRefs', backref='mechanism')
+    molecule = relationship('MoleculeDictionary', backref='mechanisms')
+    compound = relationship('CompoundRecord', backref='mechanisms')
+    binding_site = relationship('BindingSite', backref='mechanisms')
+    target = relationship('TargetDictionary', backref='mechanisms')
 
 
 class ActionType(Base):
