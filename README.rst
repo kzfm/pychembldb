@@ -111,7 +111,6 @@ Test Coverage
 TBD
 ~~~~
 
-- Assay Classification
 - Assay Parameters
 - Activity Supp
 - Activity Property

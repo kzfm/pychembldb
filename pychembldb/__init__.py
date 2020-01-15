@@ -295,6 +295,11 @@ class Assay(Base):
     activities = relationship(Activity, backref='assay')
 
 
+class AssayClassification(Base):
+    __table__ = Table('assay_classification', metadata, autoload=True)
+    assays = relationship(Assay, secondary=Table('assay_class_map', metadata, autoload=True), backref='classifications')
+
+
 ### Doc
 class Doc(Base):
     __table__ = Table('docs', metadata, autoload=True)
