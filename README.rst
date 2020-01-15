@@ -114,7 +114,6 @@ TBD
 - Assay Parameters
 - Activity Supp
 - Activity Property
-- Bioassay Ontology
 
 History
 -------

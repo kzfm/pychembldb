@@ -304,6 +304,10 @@ class AssayClassification(Base):
     assays = relationship(Assay, secondary=Table('assay_class_map', metadata, autoload=True), backref='classifications')
 
 
+class BioassayOntology(Base):
+    __table__ = Table('bioassay_ontology', metadata, autoload=True)
+
+
 ### Doc
 class Doc(Base):
     __table__ = Table('docs', metadata, autoload=True)
