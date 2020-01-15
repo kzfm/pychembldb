@@ -105,14 +105,6 @@ See also.
 * https://docs.sqlalchemy.org/en/13/
 * ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_25_schema.png
 
-Test Coverage
---------
-
-TBD
-~~~~
-
-- Assay Parameters
-
 History
 -------
 
