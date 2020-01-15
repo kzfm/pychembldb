@@ -116,7 +116,6 @@ TBD
 - Activity Supp
 - Activity Property
 - Bioassay Ontology
-- Component GO
 - Protein Family Classification
 
 
