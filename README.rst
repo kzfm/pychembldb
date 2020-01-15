@@ -117,7 +117,6 @@ TBD
 - Activity Property
 - Bioassay Ontology
 - Component GO
-- GO Classification
 - Protein Family Classification
 
 

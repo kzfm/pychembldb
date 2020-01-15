@@ -68,6 +68,12 @@ class VariantSequence(Base):
     __table__ = Table('variant_sequences', metadata, autoload=True)
     assays = relationship('Assay', backref='variant_sequence')
 
+
+class GOClassification(Base):
+    __table__ = Table('go_classification', metadata, autoload=True)
+    components = relationship('ComponentSequence', secondary=Table('component_go', metadata, autoload=True), backref='gos')
+
+
 ### Binding-Sites
 class ComponentDomain(Base):
     __table__ = Table('component_domains', metadata, autoload=True)
