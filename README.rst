@@ -115,8 +115,6 @@ TBD
 - Activity Supp
 - Activity Property
 - Bioassay Ontology
-- Protein Family Classification
-
 
 History
 -------

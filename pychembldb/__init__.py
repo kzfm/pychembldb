@@ -74,6 +74,10 @@ class GOClassification(Base):
     components = relationship('ComponentSequence', secondary=Table('component_go', metadata, autoload=True), backref='gos')
 
 
+class ProteinFamilyClassification(Base):
+    __table__ = Table('protein_family_classification', metadata, autoload=True)
+
+
 ### Binding-Sites
 class ComponentDomain(Base):
     __table__ = Table('component_domains', metadata, autoload=True)
