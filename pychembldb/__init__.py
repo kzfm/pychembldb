@@ -292,7 +292,7 @@ class Activity(Base):
     __table__ = Table('activities', metadata, autoload=True)
     predicted_binding_domain = relationship('PredictedBindingDomain', uselist=False, backref='activity')
     le = relationship('LigandEff', uselist=False, backref='activity')
-
+    properties = relationship('ActivityProperty', uselist=False, backref='activity')
 
 class Assay(Base):
     __table__ = Table('assays', metadata, autoload=True)
