@@ -94,6 +94,25 @@ Get SMILES from Molecule synonyms.
     chembldb.query(MoleculeSynonym).filter_by(synonyms="Gleevec").first().molecule.structure.canonical_smiles
     # 'CN1CCN(Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3)CC1'
 
+Get Taeget, MoA, and Molecular name
+
+::
+
+    for dm in chembldb.query(DrugMechanism).limit(10):
+        print("{0}/{1}: ({2})".format(dm.target.pref_name, dm.mechanism_of_action, dm.molecule.pref_name))
+    
+    # Carbonic anhydrase VII/Carbonic anhydrase VII inhibitor: (METHAZOLAMIDE)
+    # Carbonic anhydrase I/Carbonic anhydrase I inhibitor: (METHOCARBAMOL)
+    # Carbonic anhydrase I/Carbonic anhydrase I inhibitor: (ACETAZOLAMIDE SODIUM)
+    # Carbonic anhydrase I/Carbonic anhydrase I inhibitor: (DICHLORPHENAMIDE)
+    # Carbonic anhydrase I/Carbonic anhydrase I inhibitor: (ACETAZOLAMIDE)
+    # Carbonic anhydrase I/Carbonic anhydrase I inhibitor: (METHAZOLAMIDE)
+    # Cytochrome b/Cytochrome b inhibitor: (ATOVAQUONE)
+    # Muscarinic acetylcholine receptor M3/Muscarinic acetylcholine receptor M3 antagonist: (TRIDIHEXETHYL CHLORIDE)
+    # Muscarinic acetylcholine receptor M3/Muscarinic acetylcholine receptor M3 antagonist: (TOLTERODINE TARTRATE)
+    # Muscarinic acetylcholine receptor M3/Muscarinic acetylcholine receptor M3 antagonist: (PROPANTHELINE BROMIDE)
+
+
 See also.
 
 * https://docs.sqlalchemy.org/en/13/
