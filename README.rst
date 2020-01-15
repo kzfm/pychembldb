@@ -10,7 +10,7 @@ Requirements
 * MySQL-python >= 1.2.4 or psycopg2 >= 2.5.1
 * SQLAlchemy >= 1.3.1
 
-ChEMBLdb
+ChEMBLdb and Python version
 ~~~~~~~~
 
 * pychembldb-0.1.x support chembl_14 and Python2.7
@@ -116,8 +116,6 @@ TBD
 - Activity Supp
 - Activity Property
 - Bioassay Ontology
-- Tissue Dictionary
-- Variant sequences
 - Component GO
 - GO Classification
 - Protein Family Classification

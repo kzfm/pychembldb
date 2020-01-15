@@ -59,6 +59,15 @@ class ComponentSynonym(Base):
     __table__ = Table('component_synonyms', metadata, autoload=True)
 
 
+class TissueDictionary(Base):
+    __table__ = Table('tissue_dictionary', metadata, autoload=True)
+    assays = relationship('Assay', backref='tissue')
+
+
+class VariantSequence(Base):
+    __table__ = Table('variant_sequences', metadata, autoload=True)
+    assays = relationship('Assay', backref='variant_sequence')
+
 ### Binding-Sites
 class ComponentDomain(Base):
     __table__ = Table('component_domains', metadata, autoload=True)
@@ -310,6 +319,7 @@ chembldb = create_session(bind=engine)
 Cell = CellDictionary
 Target = TargetDictionary
 Molecule = MoleculeDictionary
+Tissue = TissueDictionary
 Curation = CurationLookup
 DataValidity = DataValidityLookup
 ActivityStd = ActivityStdLookup
