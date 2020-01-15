@@ -94,7 +94,7 @@ Get SMILES from Molecule synonyms.
     chembldb.query(MoleculeSynonym).filter_by(synonyms="Gleevec").first().molecule.structure.canonical_smiles
     # 'CN1CCN(Cc2ccc(cc2)C(=O)Nc3ccc(C)c(Nc4nccc(n4)c5cccnc5)c3)CC1'
 
-Get Taeget, MoA, and Molecular name
+Get Target, MoA, and Molecular name
 
 ::
 
@@ -123,7 +123,7 @@ History
 
 0.4.1 (2020-01-16)
 ~~~~~~~~~~~~~~~~~~
-* Fix some relation
+* Fix some relations
 
 0.4.0 (2020-01-15)
 ~~~~~~~~~~~~~~~~~~
