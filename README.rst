@@ -112,6 +112,15 @@ Get Target, MoA, and Molecular name
     # Muscarinic acetylcholine receptor M3/Muscarinic acetylcholine receptor M3 antagonist: (TOLTERODINE TARTRATE)
     # Muscarinic acetylcholine receptor M3/Muscarinic acetylcholine receptor M3 antagonist: (PROPANTHELINE BROMIDE)
 
+Display trade names and their target proteins
+
+::
+
+    for p in chembldb.query(Product).limit(10):
+        for m in p.molecules:
+            for t in m.targets:
+                print("{0} ({1}) - {2}".format(p.trade_name, m.pref_name, t.pref_name))
+
 
 See also.
 
