@@ -23,6 +23,9 @@ class TargetDictionary(Base):
     assays = relationship('Assay', backref='target')
     binding_sites = relationship('BindingSite', backref='target')
     #predicted_binding_domains = relationship('PredictedBindingDomain', backref='target')
+    molecules = relationship('MoleculeDictionary', secondary=Table('drug_mechanism', metadata, autoload=True), backref='targets')
+    compounds = relationship('CompoundRecord', secondary=Table('drug_mechanism', metadata, autoload=True), backref='targets')
+
 
 class TargetType(Base):
     __table__ = Table('target_type', metadata, autoload=True)

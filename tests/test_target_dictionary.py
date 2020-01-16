@@ -41,3 +41,11 @@ class TargetTest(unittest.TestCase):
     # TargetDictionary -> BindingSites
     def test_binding_sites(self):
         self.assertEqual(len(self.target.binding_sites), 0)
+
+    # TargetDictionary -> Molecules
+    def test_molecules(self):
+        self.assertEqual(len(self.target.molecules), 2)
+
+    # TargetDictionary -> Compounds
+    def test_compouds(self):
+        self.assertEqual(len(self.target.compounds), 2)
